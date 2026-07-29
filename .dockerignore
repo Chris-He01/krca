@@ -1,0 +1,15 @@
+bin/
+configs/*
+!configs/scene-*.yaml
+logs/
+store/
+sandbox/
+.git/
+.vscode/
+*.db
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+memory_diagnosis/
+references/
+docs/

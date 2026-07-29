@@ -1,0 +1,101 @@
+listen_addr: ":8080"
+registry_url: "${REGISTRY_URL}"
+
+auth:
+  enabled: ${KNSIGHT_AUTH_ENABLED}
+  mode: "${KNSIGHT_AUTH_MODE}"
+  sso_required: false
+  sso_url: "${KNSIGHT_SSO_URL}"
+  access_proxy:
+    jwks_url: "${KNSIGHT_JWKS_URL}"
+    public_host: "${KNSIGHT_PUBLIC_HOST}"
+    verify_iss: true
+    trusted_hosts: []
+    trusted_upstreams: []
+
+log:
+  level: "info"
+  file: "logs/hub.log"
+  max_size_mb: 100
+  max_backups: 5
+  max_age_days: 30
+  compress: true
+
+llm:
+  base_url: "${LLM_BASE_URL}"
+  model: "${LLM_MODEL}"
+  api_key: "${LLM_API_KEY}"
+  context_window: 32768
+  timeout_seconds: 120
+
+tools:
+  global_mcp_qps: 2
+  mcps: []
+  agents: []
+
+supervisor:
+  name: "OpenSourceSupervisor"
+  description: "General-purpose coordinator"
+  instruction: >
+    You are a helpful coordinator. Delegate work to configured agents when
+    appropriate and clearly distinguish evidence from assumptions.
+  max_iterations: 20
+  timeout_seconds: 600
+
+sub_agents: []
+
+sandbox:
+  enabled: true
+  workspace_dir: "sandbox/workspace"
+  deny_patterns:
+    - 'rm\s+-[rf]'
+    - 'shutdown'
+    - 'reboot'
+    - 'poweroff'
+    - 'mkfs'
+    - 'dd\s+if='
+  max_output_bytes: 100000
+  command_timeout_seconds: 30
+  restrict_to_workspace: true
+  session_base_dir: "sandbox/sessions"
+  session_max_age_seconds: 3600
+  web_fetch_enabled: true
+  web_fetch_timeout_seconds: 30
+  web_fetch_max_body_bytes: 500000
+
+memory:
+  enabled: true
+  workspace_dir: "data/memory"
+  recent_days: 7
+  max_messages: 50
+
+skills:
+  enabled: true
+  skill_dir: "data/skills"
+  data_dir: "data"
+
+store:
+  backend: "${STORE_BACKEND}"
+  db_path: "store/knsight.db"
+
+redis:
+  resource_name: "${REDIS_URL}"
+  prefix: "${REDIS_PREFIX}"
+
+kim:
+  enabled: false
+
+ck:
+  enabled: false
+  gateway_url: "${ANALYTICS_GATEWAY_URL}"
+  token: "${ANALYTICS_GATEWAY_TOKEN}"
+  user: "${ANALYTICS_GATEWAY_USER}"
+  principal: "${ANALYTICS_GATEWAY_PRINCIPAL}"
+  auth_type: "USER"
+  timeout_seconds: 60
+  default_limit: 1000
+  max_rows: 10000
+
+user_selectable_models:
+  - label: "System default"
+    model_id: "Knsight"
