@@ -1,5 +1,10 @@
 # Knsight
 
+[![CI](https://github.com/Chris-He01/krca/actions/workflows/ci.yml/badge.svg)](https://github.com/Chris-He01/krca/actions/workflows/ci.yml)
+[![GitHub Pages](https://github.com/Chris-He01/krca/actions/workflows/pages.yml/badge.svg)](https://github.com/Chris-He01/krca/actions/workflows/pages.yml)
+
+**Project website:** [English (default)](https://chris-he01.github.io/krca/) · [中文](https://chris-he01.github.io/krca/?lang=zh)
+
 Knsight is a Go-based multi-agent hub with registry discovery, MCP-compatible
 tools, configurable sub-agents, persistent sessions, a sandbox, and a Next.js
 web interface.

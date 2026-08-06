@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08111f" />
+    <meta name="description" content="Knsight is an explainable multi-agent hub for production root cause analysis." />
+    <meta property="og:title" content="Knsight — Explainable AI for Production Incidents" />
+    <meta property="og:description" content="Diagnose, connect, reason, and learn with an extensible multi-agent operations platform." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chris-he01.github.io/krca/" />
+    <meta property="og:image" content="https://chris-he01.github.io/krca/assets/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Knsight — Explainable AI for Production Incidents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Knsight home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Knsight</span>
+        </a>
+        <div class="nav-links">
+          <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
+          <a href="#workflow" data-i18n="navWorkflow">Workflow</a>
+          <a href="#agent-system" data-i18n="navArchitecture">Architecture</a>
+        </div>
+        <div class="nav-actions">
+          <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+            <span class="language-option active" data-language-label="en">EN</span>
+            <span aria-hidden="true">/</span>
+            <span class="language-option" data-language-label="zh">中文</span>
+          </button>
+          <a class="button button-small button-ghost" href="https://github.com/Chris-He01/krca" target="_blank" rel="noreferrer">
+            <span data-i18n="viewGithub">View on GitHub</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="signal-dot"></span><span data-i18n="eyebrow">PROVIDER-NEUTRAL MULTI-AGENT OPERATIONS</span></p>
+          <h1 data-i18n="heroTitle">Turn production signals into <em>explainable answers.</em></h1>
+          <p class="hero-lede" data-i18n="heroLede">Knsight coordinates specialized agents, tools, and operational context to investigate incidents—while keeping every step visible and reviewable.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#quickstart"><span data-i18n="getStarted">Get started</span><span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="https://github.com/Chris-He01/krca" target="_blank" rel="noreferrer"><span data-i18n="exploreCode">Explore the code</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="proof-row" aria-label="Project highlights">
+            <div><strong>Go</strong><span data-i18n="proofCore">Fast, portable core</span></div>
+            <div><strong>MCP</strong><span data-i18n="proofTools">Standardized tools</span></div>
+            <div><strong>Next.js</strong><span data-i18n="proofUi">Interactive workspace</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Illustration of a Knsight incident investigation">
+          <div class="visual-topbar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>incident / checkout-latency</span>
+            <span class="live-pill"><i></i><span data-i18n="live">LIVE</span></span>
+          </div>
+          <div class="investigation">
+            <div class="incident-summary">
+              <span class="severity">P1</span>
+              <div><strong data-i18n="incidentTitle">Checkout latency above SLO</strong><small data-i18n="incidentMeta">payment-api · p99 2.4s · 14:32 UTC</small></div>
+              <span class="investigating" data-i18n="investigating">Investigating</span>
+            </div>
+            <div class="agent-map">
+              <div class="map-lines" aria-hidden="true"><i class="line lead-stem"></i><i class="line split-bar"></i><i class="line child-left"></i><i class="line child-right"></i><i class="line merge-left"></i><i class="line merge-right"></i><i class="line merge-bar"></i><i class="line root-stem"></i></div>
+              <div class="agent-node lead"><span>01</span><strong data-i18n="nodeLead">Lead agent</strong><small data-i18n="nodeScope">Scopes incident</small></div>
+              <div class="agent-node metrics"><span>02</span><strong data-i18n="nodeMetrics">Metrics</strong><small data-i18n="nodeSpike">Finds DB spike</small></div>
+              <div class="agent-node logs"><span>03</span><strong data-i18n="nodeLogs">Logs</strong><small data-i18n="nodeErrors">Correlates errors</small></div>
+              <div class="agent-node root"><span>✓</span><strong data-i18n="nodeCause">Root cause</strong><small data-i18n="nodePool">Connection pool saturation</small></div>
+            </div>
+            <div class="finding">
+              <div class="confidence"><span>92%</span><small data-i18n="confidence">confidence</small></div>
+              <div><span class="finding-label" data-i18n="findingLabel">PRIMARY FINDING</span><strong data-i18n="findingText">Database connections exhausted after deployment</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement band">
+        <div class="shell statement-grid">
+          <p class="section-kicker" data-i18n="whyKicker">WHY KNSIGHT</p>
+          <h2 data-i18n="whyTitle">Incident response has enough data. What it needs is a clear line of reasoning.</h2>
+          <p data-i18n="whyBody">Knsight turns scattered metrics, logs, tools, and domain knowledge into a coordinated investigation. Operators can follow the evidence, inspect agent decisions, and reuse the outcome.</p>
+        </div>
+      </section>
+
+      <section class="section shell" id="capabilities">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker" data-i18n="capKicker">CAPABILITIES</p><h2 data-i18n="capTitle">One investigation surface.<br />Four compounding capabilities.</h2></div>
+          <p data-i18n="capBody">Built for teams that need flexible integrations without losing control, context, or explainability.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card accent reveal"><span class="card-index">01</span><div class="card-symbol">⌕</div><h3 data-i18n="cap1Title">Diagnose</h3><p data-i18n="cap1Body">Receive an incident in natural language, extract its scope, and turn symptoms into testable hypotheses.</p><span class="card-tag" data-i18n="cap1Tag">Intent + context</span></article>
+          <article class="capability-card reveal"><span class="card-index">02</span><div class="card-symbol">⌘</div><h3 data-i18n="cap2Title">Connect</h3><p data-i18n="cap2Body">Discover services and call MCP-compatible tools across monitoring, logs, traces, and internal systems.</p><span class="card-tag" data-i18n="cap2Tag">Registry + MCP</span></article>
+          <article class="capability-card reveal"><span class="card-index">03</span><div class="card-symbol">⑂</div><h3 data-i18n="cap3Title">Reason</h3><p data-i18n="cap3Body">Coordinate specialized sub-agents, verify evidence in parallel, and preserve the full analysis trail.</p><span class="card-tag" data-i18n="cap3Tag">Multi-agent orchestration</span></article>
+          <article class="capability-card reveal"><span class="card-index">04</span><div class="card-symbol">◇</div><h3 data-i18n="cap4Title">Learn</h3><p data-i18n="cap4Body">Persist sessions and reports so resolved incidents become reusable operational knowledge.</p><span class="card-tag" data-i18n="cap4Tag">Sessions + memory</span></article>
+        </div>
+      </section>
+
+      <section class="section band workflow-section" id="workflow">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="section-kicker" data-i18n="flowKicker">HOW IT WORKS</p><h2 data-i18n="flowTitle">From alert to accountable answer.</h2></div>
+            <p data-i18n="flowBody">A structured loop keeps the investigation focused while letting agents explore independent evidence paths.</p>
+          </div>
+          <ol class="workflow-list">
+            <li class="reveal"><span class="step-number">01</span><div><h3 data-i18n="step1Title">Frame the incident</h3><p data-i18n="step1Body">Normalize the request, identify affected services, and establish time and safety boundaries.</p></div><span class="step-state" data-i18n="step1State">CONTEXT</span></li>
+            <li class="reveal"><span class="step-number">02</span><div><h3 data-i18n="step2Title">Delegate the evidence</h3><p data-i18n="step2Body">Select specialized agents and tools, then investigate metrics, logs, dependencies, and hosts in parallel.</p></div><span class="step-state" data-i18n="step2State">PARALLEL</span></li>
+            <li class="reveal"><span class="step-number">03</span><div><h3 data-i18n="step3Title">Test the hypotheses</h3><p data-i18n="step3Body">Compare signals, reject weak explanations, and converge on the most supported failure path.</p></div><span class="step-state" data-i18n="step3State">VERIFY</span></li>
+            <li class="reveal"><span class="step-number">04</span><div><h3 data-i18n="step4Title">Explain and retain</h3><p data-i18n="step4Body">Produce a structured report with evidence, confidence, and next actions; persist it for reuse.</p></div><span class="step-state" data-i18n="step4State">REPORT</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section band agent-system-section" id="agent-system">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="section-kicker" data-i18n="agentKicker">AGENT SYSTEM</p><h2 data-i18n="agentTitle">One supervisor coordinates.<br />Specialists go deep.</h2></div>
+            <p data-i18n="agentBody">Knsight uses hierarchical delegation: the top-level supervisor owns the plan, domain sub-agents own each investigation stage, and tool agents connect the reasoning loop to real systems.</p>
+          </div>
+
+          <div class="agent-architecture reveal" aria-label="Knsight supervisor and sub-agent architecture">
+            <div class="arch-tier tier-supervisor">
+              <div class="tier-label"><span>01</span><strong data-i18n="tierOrchestration">ORCHESTRATION</strong></div>
+              <div class="architecture-node supervisor-node"><span class="node-type" data-i18n="supervisorType">SUPERVISOR</span><strong>InsightSupervisor</strong><small data-i18n="supervisorRole">Plans, delegates, verifies, and synthesizes</small></div>
+            </div>
+            <div class="architecture-connector" aria-hidden="true"><i></i></div>
+            <div class="arch-tier tier-specialists">
+              <div class="tier-label"><span>02</span><strong data-i18n="tierSpecialists">SPECIALISTS</strong></div>
+              <div class="specialist-grid">
+                <div class="architecture-node specialist-node active"><span class="node-type" data-i18n="subAgentType">SUB-AGENT</span><strong>InspectAgent</strong><small data-i18n="inspectRole">Collects and correlates evidence</small></div>
+                <div class="architecture-node specialist-node"><span class="node-type" data-i18n="subAgentType">SUB-AGENT</span><strong>VisionAgent</strong><small data-i18n="visionRole">Turns metrics into visual insight</small></div>
+                <div class="architecture-node specialist-node"><span class="node-type" data-i18n="subAgentType">SUB-AGENT</span><strong>SummaryAgent</strong><small data-i18n="summaryRole">Produces the structured RCA report</small></div>
+              </div>
+            </div>
+            <div class="architecture-connector" aria-hidden="true"><i></i></div>
+            <div class="arch-tier tier-tools">
+              <div class="tier-label"><span>03</span><strong data-i18n="tierTools">TOOLS &amp; SYSTEMS</strong></div>
+              <div class="tool-path">
+                <div class="architecture-node tool-agent-node"><span class="node-type" data-i18n="toolAgentType">TOOL AGENT · EXAMPLE</span><strong>CloudStability</strong><small data-i18n="cloudRole">Runs host and service diagnostics</small></div>
+                <span class="path-arrow" aria-hidden="true">→</span>
+                <div class="tool-targets"><div><span class="target-code">MCP</span><strong data-i18n="targetTools">Operational tools</strong></div><div><span class="target-code">SYS</span><strong data-i18n="targetHosts">Services &amp; hosts</strong></div></div>
+              </div>
+            </div>
+            <div class="architecture-note"><span class="signal-dot"></span><span data-i18n="agentNote">Typical deep-inspection path shown. Agent names and tool connections are configuration-driven.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="architecture">
+        <div class="architecture-grid">
+          <div class="architecture-copy reveal">
+            <p class="section-kicker" data-i18n="archKicker">ARCHITECTURE</p>
+            <h2 data-i18n="archTitle">Open at every boundary.</h2>
+            <p data-i18n="archBody">Use the model endpoint, storage layer, and operational tools that fit your environment. Knsight keeps provider-specific credentials and private knowledge outside the framework.</p>
+            <ul class="check-list">
+              <li><span>✓</span><span data-i18n="arch1">OpenAI-compatible model endpoints</span></li>
+              <li><span>✓</span><span data-i18n="arch2">SQLite by default, optional Redis persistence</span></li>
+              <li><span>✓</span><span data-i18n="arch3">Sandboxed tool execution and web access controls</span></li>
+              <li><span>✓</span><span data-i18n="arch4">JWT and identity-token authentication modes</span></li>
+            </ul>
+          </div>
+          <div class="stack-diagram reveal" aria-label="Knsight architecture layers">
+            <div class="stack-row stack-input"><span>01</span><strong data-i18n="layer1">Operator + Web UI</strong><small>Next.js</small></div>
+            <div class="stack-arrow">↓</div>
+            <div class="stack-row stack-hub"><span>02</span><strong data-i18n="layer2">Knsight Agent Hub</strong><small>Go</small></div>
+            <div class="stack-branches"><i></i><i></i><i></i></div>
+            <div class="stack-tools"><div><span>03A</span><strong data-i18n="layer3a">Models</strong></div><div><span>03B</span><strong data-i18n="layer3b">MCP tools</strong></div><div><span>03C</span><strong data-i18n="layer3c">Storage</strong></div></div>
+            <div class="stack-note"><span class="signal-dot"></span><span data-i18n="providerNeutral">Provider-neutral by design</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section quickstart band" id="quickstart">
+        <div class="shell quickstart-grid">
+          <div class="reveal"><p class="section-kicker" data-i18n="startKicker">QUICK START</p><h2 data-i18n="startTitle">Explore locally with the included mock services.</h2><p data-i18n="startBody">Run the registry, model, and MCP mocks, then start the hub. No production credentials are needed for the demo path.</p><a class="text-link" href="https://github.com/Chris-He01/krca#quick-start" target="_blank" rel="noreferrer"><span data-i18n="readGuide">Read the full guide</span> ↗</a></div>
+          <div class="terminal reveal">
+            <div class="terminal-bar"><span class="window-dots"><i></i><i></i><i></i></span><button id="copy-command" type="button"><span data-i18n="copy">Copy</span></button></div>
+            <pre><code id="quickstart-code"><span class="comment"># Terminal 1 — service registry</span>
+go run ./cmd/registry --addr :8081
+
+<span class="comment"># Terminal 2 — local model mock</span>
+go run ./cmd/mock_llm --addr :8090 --reply "hello"
+
+<span class="comment"># Terminal 3 — hub</span>
+go run ./cmd/hub --config deploy/hub.prod.yaml</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta shell reveal">
+        <p class="section-kicker" data-i18n="ctaKicker">BUILD WITH KNSIGHT</p>
+        <h2 data-i18n="ctaTitle">Give your incident response a reasoning layer.</h2>
+        <p data-i18n="ctaBody">Inspect the architecture, run the demo, and shape the agent system around your operational environment.</p>
+        <div class="hero-actions"><a class="button button-primary" href="https://github.com/Chris-He01/krca" target="_blank" rel="noreferrer"><span data-i18n="openRepository">Open repository</span><span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/Chris-He01/krca/issues" target="_blank" rel="noreferrer"><span data-i18n="shareFeedback">Share feedback</span><span aria-hidden="true">→</span></a></div>
+      </section>
+    </main>
+
+    <footer class="footer band"><div class="shell footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Knsight</span></a><p data-i18n="footerText">Explainable multi-agent operations, designed to be inspected and extended.</p><p>© <span id="year"></span> Knsight</p></div></footer>
+  </body>
+</html>
